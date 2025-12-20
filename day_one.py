@@ -32,19 +32,15 @@ zero_count = 0
 
 for direction, amount in instructions:
 
-    if direction == 'L':
-        while amount > 0:
-            if dial_point == 0:
-                zero_count += 1
-            amount -= 1
+    while amount > 0:
+        amount -= 1
+        if dial_point == 0:
+            zero_count += 1
+        if direction == 'L':
             dial_point -= 1
             if dial_point < 0:
                 dial_point = 99
-    else:
-        while amount > 0:
-            if dial_point == 0:
-                zero_count += 1
-            amount -= 1
+        else:
             dial_point += 1
             if dial_point > 99:
                 dial_point = 0
